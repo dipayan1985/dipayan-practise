@@ -6,7 +6,7 @@ public class LongestPalindromicSubstring {
     }
 
     public static String longestPalindrome(String s) {
-        int maxLength = Integer.MIN_VALUE;
+        int maxLength = 0;
         String palindrome = "";
 
         for (int i = 0; i < s.length(); ) {
