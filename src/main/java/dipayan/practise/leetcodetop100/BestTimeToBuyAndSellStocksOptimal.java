@@ -1,7 +1,5 @@
 package dipayan.practise.leetcodetop100;
 
-import java.util.Map;
-
 public class BestTimeToBuyAndSellStocksOptimal {
     public static void main(String[] args) {
         int[] prices = {7, 1, 5, 3, 6, 4}; // 1,2,4
