@@ -1,40 +1,36 @@
 package dipayan.practise.datastructures;
 
 public class DetectCycle {
-    static class ListNode {
-        int value;
-        ListNode next;
+  static class ListNode {
+    int value;
+    ListNode next;
 
-        ListNode() {
+    ListNode() {}
 
-        }
-
-        ListNode(int value) {
-            this.value = value;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.value = val;
-            this.next = next;
-        }
+    ListNode(int value) {
+      this.value = value;
     }
 
-    public static void main(String[] args) {
-
+    ListNode(int val, ListNode next) {
+      this.value = val;
+      this.next = next;
     }
+  }
 
-    private void detectCycle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
+  public static void main(String[] args) {}
 
-        while (fast != null && fast.next.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
+  private void detectCycle(ListNode head) {
+    ListNode slow = head;
+    ListNode fast = head;
 
-            if (fast == slow) {
-                System.out.println("Cycle found");
-                break;
-            }
-        }
+    while (fast != null && fast.next.next != null) {
+      fast = fast.next.next;
+      slow = slow.next;
+
+      if (fast == slow) {
+        System.out.println("Cycle found");
+        break;
+      }
     }
+  }
 }
