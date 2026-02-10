@@ -1,4 +1,7 @@
-package dipayan.practise.prefixSum;
+package dipayan.practise.prefixsum;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ContiguousArray {
     public static void main(String[] args) {
@@ -7,25 +10,19 @@ public class ContiguousArray {
 
     public static int findMaxLength(int[] nums) {
         int prefixSum = 0;
-        int len = 0;
         int maxLen = 0;
-        int consecutiveTemps = 0;
+        Map<Integer, Integer> prefixSumToIndex = new HashMap<>();
 
-        for (int num : nums) {
-            int temp = num;
+        prefixSumToIndex.put(0, -1);
 
-            if (temp == 0) {
-                temp = -1;
-                consecutiveTemps++;
-            } else {
-                consecutiveTemps = 0;
+        for (int i = 0; i < nums.length; i++) {
+            prefixSum += (nums[i] == 0) ? -1 : 1;
+
+            if (prefixSumToIndex.containsKey(prefixSum)) {
+                maxLen = Math.max(maxLen, i - prefixSumToIndex.get(prefixSum));
             }
 
-            prefixSum = prefixSum + temp;
-
-            if (prefixSum == 0) {
-                maxLen = Math.max(consecutiveTemps * 2, maxLen);
-            }
+            prefixSumToIndex.put(prefixSum, i);
         }
 
         return maxLen;

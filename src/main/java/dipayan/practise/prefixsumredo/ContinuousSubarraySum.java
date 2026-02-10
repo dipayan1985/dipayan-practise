@@ -3,7 +3,7 @@ package dipayan.practise.prefixsumredo;
 import java.util.HashMap;
 import java.util.Map;
 
-class ContinuousSubarraySum {
+public class ContinuousSubarraySum {
     public boolean checkSubarraySum(int[] nums, int k) {
         int prefixSum = 0;
         Map<Integer, Integer> prefixSumRemainderMap = new HashMap<>();

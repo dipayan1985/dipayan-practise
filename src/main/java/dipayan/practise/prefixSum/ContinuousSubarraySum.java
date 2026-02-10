@@ -1,4 +1,4 @@
-package dipayan.practise.prefixSum;
+package dipayan.practise.prefixsum;
 
 import java.util.HashMap;
 import java.util.Map;

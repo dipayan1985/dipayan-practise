@@ -1,4 +1,4 @@
-package dipayan.practise.prefixSum;
+package dipayan.practise.prefixsum;
 
 public class FindPivotIndex {
     public static void main(String[] args) {
